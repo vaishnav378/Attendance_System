@@ -1,0 +1,12 @@
+D:\WPF Folder\Attendence\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\WPF Folder\Attendence\DAL\bin\Debug\net8.0\DAL.dll
+D:\WPF Folder\Attendence\DAL\bin\Debug\net8.0\DAL.pdb
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\DAL.dll
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\DAL.pdb
+D:\WPF Folder\Attendence\DAL\obj\Debug\net8.0\ref\DAL.dll

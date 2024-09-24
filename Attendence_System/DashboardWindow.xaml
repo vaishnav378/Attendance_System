@@ -1,0 +1,102 @@
+﻿<Window x:Class="Attendence_System.DashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DASHBOARD"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        Background="#F5F5F5">
+
+    <Window.Resources>
+        <!-- DropShadowEffect for elements -->
+        <DropShadowEffect x:Key="DropShadowEffect" ShadowDepth="3" BlurRadius="5" Opacity="0.3"/>
+
+        <!-- Style for Rounded Buttons -->
+        <Style TargetType="Button" x:Key="RoundedButtonStyle">
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="#4CAF50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Effect" Value="{StaticResource DropShadowEffect}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                CornerRadius="20">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!-- Button hover effect -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#66BB6A" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#388E3C" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Style for DataGrid -->
+        <Style TargetType="DataGrid" x:Key="DataGridStyle">
+            <Setter Property="Foreground" Value="#333"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="ColumnHeaderHeight" Value="35"/>
+            <Setter Property="RowHeight" Value="35"/>
+            <Setter Property="Effect" Value="{StaticResource DropShadowEffect}"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="LightGray"/>
+            <Setter Property="VerticalGridLinesBrush" Value="LightGray"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border CornerRadius="15" Background="White" Padding="30" 
+                BorderBrush="#E0E0E0" BorderThickness="1" Effect="{StaticResource DropShadowEffect}">
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
+                <!-- Welcome Label -->
+                <Label x:Name="WelcomeLabel" Content="Welcome, User!" 
+                       FontSize="24" FontWeight="Bold" Foreground="#333"
+                       HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- Button Section -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                    <Button Content="Clock In" Width="100" Margin="10,0" Style="{StaticResource RoundedButtonStyle}" Click="ClockIn_Click"/>
+                    <Button Content="Clock Out" Width="100" Margin="10,0" Style="{StaticResource RoundedButtonStyle}" Click="ClockOut_Click"/>
+                    <Button Content="LogOut" Width="100" Margin="10,0" Style="{StaticResource RoundedButtonStyle}" Click="Logout_Click"/>
+                </StackPanel>
+
+                <!-- View Attendance Button -->
+                <Button Content="View Attendance" Width="150" Margin="0,10,0,20" 
+                        HorizontalAlignment="Center" Style="{StaticResource RoundedButtonStyle}"
+                        Click="ViewAttendance_Click"/>
+
+                <!-- Attendance DataGrid -->
+                <DataGrid x:Name="AttendanceGrid" 
+                          Width="860" Height="300"
+                          Visibility="Collapsed" 
+                          Style="{StaticResource DataGridStyle}" 
+                          AutoGenerateColumns="False" 
+                          HeadersVisibility="Column" 
+                          CanUserAddRows="False" 
+                          IsReadOnly="True" 
+                          Margin="0,20,0,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Employee ID" Binding="{Binding EmployeeID}" Width="150"/>
+                        <DataGridTextColumn Header="Clock In Time" Binding="{Binding ClockInTime}" Width="200"/>
+                        <DataGridTextColumn Header="Clock Out Time" Binding="{Binding ClockOutTime}" Width="200"/>
+                        <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="150"/>
+                        <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

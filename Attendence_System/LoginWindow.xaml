@@ -1,0 +1,93 @@
+﻿<Window x:Class="Attendence_System.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LOGIN" Height="250" Width="300"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized" ResizeMode="CanResize"
+        Background="LightGray">
+
+    <Window.Resources>
+        <!-- DropShadowEffect for Buttons -->
+        <DropShadowEffect x:Key="DropShadowEffect" ShadowDepth="5" BlurRadius="10" Opacity="0.3"/>
+
+        <!-- Style for Rounded Buttons -->
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="5,2"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Effect" Value="{StaticResource DropShadowEffect}"/>
+            <Setter Property="Background" Value="#4CAF50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="0" 
+                                CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!-- Button hover effect -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#66BB6A" />
+                    <Setter Property="BorderBrush" Value="#388E3C" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#388E3C"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="300">
+        <Image x:Name="CameraPreview" Width="300" Height="200" Margin="0,10,0,20" 
+               Stretch="Uniform" />
+
+        <!-- Outer Border with rounded corners and shadow -->
+        <Border CornerRadius="15" Background="White" Padding="20" 
+                BorderBrush="#E0E0E0" BorderThickness="2" Effect="{StaticResource DropShadowEffect}">
+
+            <StackPanel>
+
+                <!-- Title Text -->
+                <TextBlock Text="Welcome Back" FontSize="24" FontWeight="Bold" Foreground="#333" 
+                           HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- Username Section -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label Content="Username:" VerticalAlignment="Center" Foreground="#555" FontWeight="Bold"/>
+                    <TextBox x:Name="UsernameTextBox" Width="200" Margin="10,0,0,0" 
+                             Padding="5" BorderBrush="#CCC" Background="#F0F0F0" BorderThickness="1" />
+                </StackPanel>
+
+                <!-- Password Section -->
+                <StackPanel Orientation="Horizontal" Margin="4,0,0,10">
+                    <Label Content="Password:" VerticalAlignment="Center" Foreground="#555" FontWeight="Bold"/>
+                    <PasswordBox x:Name="PasswordBox" Width="200" Margin="10,0,0,0"
+                                 Padding="5" BorderBrush="#CCC" Background="#F0F0F0" BorderThickness="1"/>
+                </StackPanel>
+
+                <!-- Button Section -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Login" Width="100" Height="35" Margin="10,0" 
+                            Style="{StaticResource RoundedButtonStyle}" 
+                            Click="Login_Click"/>
+                    <Button Content="Register" Width="100" Height="35" Margin="10,0" 
+                            Background="#2196F3" Foreground="White" 
+                            FontWeight="Bold" Cursor="Hand" Click="Register_Click" 
+                            Style="{StaticResource RoundedButtonStyle}"/>
+                </StackPanel>
+
+                <!-- Capture and Login Button -->
+                <Button Content="Capture &amp; Login" Width="150" Height="35" Margin="13" 
+                        Background="#FF9800" Foreground="White" FontWeight="Bold" Cursor="Hand" 
+                        Style="{StaticResource RoundedButtonStyle}" Click="CaptureAndLogin_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

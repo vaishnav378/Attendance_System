@@ -1,0 +1,15 @@
+D:\WPF Folder\Attendence\BLL\bin\Release\net8.0\BLL.deps.json
+D:\WPF Folder\Attendence\BLL\bin\Release\net8.0\BLL.dll
+D:\WPF Folder\Attendence\BLL\bin\Release\net8.0\BLL.pdb
+D:\WPF Folder\Attendence\BLL\bin\Release\net8.0\DAL.dll
+D:\WPF Folder\Attendence\BLL\bin\Release\net8.0\DAL.pdb
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\BLL.csproj.AssemblyReference.cache
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\BLL.AssemblyInfoInputs.cache
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\BLL.AssemblyInfo.cs
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\BLL.csproj.CoreCompileInputs.cache
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\BLL.csproj.Up2Date
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\BLL.dll
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\refint\BLL.dll
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\BLL.pdb
+D:\WPF Folder\Attendence\BLL\obj\Release\net8.0\ref\BLL.dll
